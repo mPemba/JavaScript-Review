@@ -5,10 +5,19 @@
 Write a function that takes an array of integers and returns the sum of the integers after adding 1 to each.
 
 plusOneSum([1, 2, 3, 4]); // 14
-
 */
+var plusOneSum = [1, 2, 3, 4, 5];
 
-
+var addOne = function(arr) {
+	var result = [];
+	var total = 0;
+	for (var i = 0; i < arr.length; i++) {
+		result.push(arr[i] + 1);
+		total = arr[i] + total;
+		return total;
+	};
+};
+addOne(plusOneSum);
 
 /*
 

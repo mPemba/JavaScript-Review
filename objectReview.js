@@ -98,11 +98,11 @@ methodCollection.logHello();
 //voweler("This is a test") --> {i: 2, a: 1, e: 1};
 
 var voweler = function(string) {
+  var vowObj = {};
   var sepString = string.split('');
   for (var i = 0; i < string.length; i++) {
-    if (string[i] === 'i' || 'o' || 'u' || 'e' || 'a') {
-      console.log(string[i]);
-      sepString = string.join(' ');
+    if (string[i] === 'i' || string[i] === 'o' || string[i] === 'u' || string[i] === 'e' || string[i] === 'a') {
+      vowObj[sepString[i] += 1];
     }
   }
 }
