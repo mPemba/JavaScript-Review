@@ -16,8 +16,33 @@ inner('435-215-9248');
 
 /*
 
-Write a function that accepts a function as it's only argument and returns a new function (which calls the original function that was passed in) that can only ever be executed once.
+Write a function that accepts a function as it's only argument and returns a new function 
+(which calls the original function that was passed in) that can only ever be executed once.
 
-Once completed, add a second arguments that allows the function to be executed N number of times. After the function has been called N number of times, console.log('STAHHP');
+Once completed, add a second arguments that allows the function to be executed N number of times. 
+After the function has been called N number of times, console.log('STAHHP');
 
 */
+
+var outerFn = function(innerFn) {
+	var executed = false;
+	return function() {
+		if (!executed || executed < 4) {
+			innerFn();
+			executed++;
+			if (executed === 2) {
+				console.log('stop');
+				executed = true;
+			}
+		}
+	}
+}
+
+var thisGuy = outerFn(function(){
+  console.log('working');
+}, 0);
+
+thisGuy();
+
+
+

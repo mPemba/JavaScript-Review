@@ -9,13 +9,11 @@ plusOneSum([1, 2, 3, 4]); // 14
 var plusOneSum = [1, 2, 3, 4, 5];
 
 var addOne = function(arr) {
-	var result = [];
 	var total = 0;
 	for (var i = 0; i < arr.length; i++) {
-		result.push(arr[i] + 1);
-		total = arr[i] + total;
-		return total;
+		total = arr[i] + 1 + total;
 	};
+	return total;
 };
 addOne(plusOneSum);
 
