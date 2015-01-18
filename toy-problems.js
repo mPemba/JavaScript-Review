@@ -24,8 +24,12 @@ Write a function that accepts a multi dimensional array and returns a flattened 
 flatten([1, 2, [3, [4], 5, 6], 7]) // [1, 2, 3, 4, 5, 6, 7]
 
 */
+var flatten = [1, 2, [3, [4], 5], 7, 8];
+var newArray = [];
 
+newArray = newArray.concat.apply(flatten, newArray);
 
+alert(newArray);
 
 /*
 
@@ -36,7 +40,8 @@ Given an array [a1, a2, ..., aN, b1, b2, ..., bN, c1, c2, ..., cN] convert it to
 
 /*
 
-There is an array of non-negative integers. A second array is formed by shuffling the elements of the first array and deleting a random element. Given these two arrays, find which element is missing in the second array.
+There is an array of non-negative integers. A second array is formed by shuffling the elements of the first array 
+and deleting a random element. Given these two arrays, find which element is missing in the second array.
 
 */
 
@@ -56,19 +61,43 @@ longestWords("Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo") 
 
 */
 
+var sentence = "You are just an old antidisestablishmentarian";
+
+var longestWordFinder = function(string) {
+	var str = string.split(' ');
+	var longest = 0;
+	var word = null;
+	for (var i = 0; i < str.length; i++) {
+		if (longest < str[i].length) {
+			longest = str[i].length; 
+			word = str[i];
+		}
+	}
+	return word;
+}
+longestWordFinder(sentence);
 
 /*
 
-If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. 
+The sum of these multiples is 23.
 
 Find the sum of all the multiples of 3 or 5 below 1000.
 
 */
+var sum = 0;
+for (var i = 0; i < 1000; i++) {
+	if (i % 3 === 0 && i % 5 === 0) {
+		sum += i;
+	}
+}
+console.log('sum: %d', sum);
 
 
 /*
 
-Remove duplicate characters in a given string keeping only the first occurrences. For example, if the input is ‘tree traversal’ the output will be "tre avsl".
+Remove duplicate characters in a given string keeping only the first occurrences. 
+For example, if the input is ‘tree traversal’ the output will be "tre avsl".
 
 */
 
